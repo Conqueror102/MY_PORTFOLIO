@@ -17,9 +17,9 @@ const portfolioInfo = {
   title: "Full Stack Developer",
   description:
     "Experienced Full Stack Developer specializing in React, Next.js, TypeScript, and Node.js. View my projects and skills.",
-  url: "https://your-portfolio-domain.com", // Replace with your actual domain
-  image: "https://your-portfolio-domain.com/og-image.jpg", // Replace with your actual OG image
-  twitterHandle: "@yourusername", // Replace with your Twitter handle
+  url: "https://victor-onyemaechi.vercel.app", // Replace with your actual domain
+  image: "https://victor-onyemaechi.vercel.app/og-image.jpg", // Replace with your actual OG image
+  twitterHandle: "@TECH_snitch101", // Replace with your Twitter handle
   keywords: [
     "full stack developer",
     "react developer",
@@ -113,7 +113,7 @@ export const metadata: Metadata = {
 
   // Verification for search consoles
   verification: {
-    google: "your-google-verification-code", // Replace with your verification code
+    google: "qzS6Fzf_hHAwewQfz-gfOatDDr196xJxJ6c_HHC2Q8o", // Replace with your verification code
     // yandex: "your-yandex-verification-code",
     // bing: "your-bing-verification-code",
   },
@@ -153,9 +153,9 @@ export default function RootLayout({
               description: portfolioInfo.description,
               image: portfolioInfo.image,
               sameAs: [
-                "https://github.com/yourusername",
-                "https://linkedin.com/in/yourusername",
-                "https://twitter.com/yourusername",
+                "https://github.com/Conqueror102",
+                "https://www.linkedin.com/in/victor-conqueror-956635327/",
+                "https://x.com/TECH_snitch101?t=1MXTBHsRp_tx9nFgz7iNAA&s=09",
               ],
               knowsAbout: ["React", "Next.js", "TypeScript", "Node.js", "Web Development", "UI/UX Design, HTML", "CSS", "JavaScript"],
             }),

@@ -12,7 +12,7 @@ const sections = [
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://your-portfolio-domain.com" // Replace with your actual domain
+  const baseUrl = "https://victor-onyemaechi.vercel.app" // Replace with your actual domain
 
   return sections.map((section) => ({
     url: `${baseUrl}${section.path}`,

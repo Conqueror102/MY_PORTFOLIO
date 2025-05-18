@@ -224,7 +224,7 @@ export function VSCodeLayout({ children, activeSection, setActiveSection }: VSCo
         "flex flex-col h-screen font-mono text-sm transition-colors duration-200",
         isMaximized
           ? "fixed inset-0 z-50"
-          : "border border-gray-700 rounded-lg shadow-xl mx-auto my-4 max-w-[1200px] h-[90vh]",
+          : "border border-gray-700 rounded-lg shadow-xl mx-auto my-4 max-w-[1200px] h-[100vh]",
       )}
       style={{
         backgroundColor: theme.background,

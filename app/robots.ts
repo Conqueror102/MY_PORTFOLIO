@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/private/", "/admin/"],
     },
-    sitemap: "https://your-portfolio-domain.com/sitemap.xml", // Replace with your actual domain
+    sitemap: "https://victor-onyemaechi.vercel.app/sitemap.xml", // Replace with your actual domain
   }
 }

@@ -26,59 +26,81 @@ export function Education() {
     }))
   }
 
-  // const education = [
-  //   {
-  //     degree: "Master of Science in Computer Science",
-  //     institution: "Stanford University",
-  //     location: "Stanford, CA",
-  //     period: "2018 - 2020",
-  //     description:
-  //       "Specialized in Artificial Intelligence and Machine Learning. Thesis on 'Deep Learning Applications in Web Development'.",
-  //     gpa: "3.9/4.0",
-  //     courses: ["Advanced Algorithms", "Machine Learning", "Neural Networks", "Web Systems"],
-  //   },
-  //   {
-  //     degree: "Bachelor of Science in Computer Science",
-  //     institution: "MIT",
-  //     location: "Cambridge, MA",
-  //     period: "2014 - 2018",
-  //     description:
-  //       "Focused on Software Engineering and Web Development. Participated in multiple hackathons and coding competitions.",
-  //     gpa: "3.8/4.0",
-  //     courses: ["Data Structures", "Algorithms", "Database Systems", "Web Programming"],
-  //   },
-  // ]
+  const education = [
+    {
+  degree: "Software Engineer",
+  institution: "Kode10x",
+  location: "Agbogu, Lagos",
+  period: "2024 - 2025",
+  description:
+    "Specialized in Frontend development and Server side architecture, with emphasis on scalable web applications.",
+  certifications: [
+    "Certified JavaScript Developer",
+    "Git",
+    "Responsive Web Design",
+    "etc"
+  ],
+  courses: [
+    "Data Structures & APIs",
+    "React and State Management",
+    "Node.js Backend Development",
+    "Database Systems"
+  ],
+},
 
-  // const certifications = [
-  //   {
-  //     name: "AWS Certified Solutions Architect",
-  //     issuer: "Amazon Web Services",
-  //     date: "2022",
-  //     credentialId: "AWS-12345",
-  //     url: "https://aws.amazon.com/certification/",
-  //   },
-  //   {
-  //     name: "Google Professional Cloud Developer",
-  //     issuer: "Google Cloud",
-  //     date: "2021",
-  //     credentialId: "GCP-67890",
-  //     url: "https://cloud.google.com/certification/cloud-developer",
-  //   },
-  //   {
-  //     name: "Meta Frontend Developer Professional Certificate",
-  //     issuer: "Meta (Facebook)",
-  //     date: "2021",
-  //     credentialId: "META-54321",
-  //     url: "https://www.coursera.org/professional-certificates/meta-front-end-developer",
-  //   },
-  //   {
-  //     name: "TensorFlow Developer Certificate",
-  //     issuer: "Google",
-  //     date: "2020",
-  //     credentialId: "TF-09876",
-  //     url: "https://www.tensorflow.org/certificate",
-  //   },
-  // ]
+    {
+  degree: "Computer Engineer",
+  institution: "Inland Computers",
+  location: "Ajegule, Lagos",
+  period: "2024 - 2025",
+  description:
+    "Trained in computer hardware, networking, and embedded systems.",
+    certifications: [
+  "Certificate in Computer Hardware Maintenance",
+  "Certificate in Networking Basics",
+  "Certificate in Embedded Systems"
+],
+
+  courses: [
+    "Digital Systems",
+    "Computer Architecture",
+    "Networking Essentials",
+    "Embedded Programming"
+  ],
+}
+
+  ]
+
+  const certifications = [
+    {
+      name: "AWS Certified Solutions Architect",
+      issuer: "Amazon Web Services",
+      date: "2022",
+      credentialId: "AWS-12345",
+      url: "https://aws.amazon.com/certification/",
+    },
+    {
+      name: "Google Professional Cloud Developer",
+      issuer: "Google Cloud",
+      date: "2021",
+      credentialId: "GCP-67890",
+      url: "https://cloud.google.com/certification/cloud-developer",
+    },
+    {
+      name: "Meta Frontend Developer Professional Certificate",
+      issuer: "Meta (Facebook)",
+      date: "2021",
+      credentialId: "META-54321",
+      url: "https://www.coursera.org/professional-certificates/meta-front-end-developer",
+    },
+    {
+      name: "TensorFlow Developer Certificate",
+      issuer: "Google",
+      date: "2020",
+      credentialId: "TF-09876",
+      url: "https://www.tensorflow.org/certificate",
+    },
+  ]
 
   const courses = [
     // {
@@ -184,7 +206,7 @@ export function Education() {
 
       <div className="space-y-6">
         {/* Formal Education */}
-        {/* <div className="bg-[#252526] border border-[#3C3C3C] rounded-md overflow-hidden">
+        <div className="bg-[#252526] border border-[#3C3C3C] rounded-md overflow-hidden">
           <button
             className="w-full flex items-center justify-between p-4 text-left"
             onClick={() => toggleSection("education")}
@@ -224,7 +246,14 @@ export function Education() {
                     <p className="text-[#D4D4D4] mb-2">{edu.description}</p>
 
                     <div className="text-[#D4D4D4]">
-                      <span className="text-[#9CDCFE]">GPA:</span> {edu.gpa}
+                      <span className="text-[#9CDCFE]">Certification:</span> 
+                      <div className="flex flex-wrap gap-2">
+                       {edu.certifications.map((certifications, courseIndex) => (
+                          <span key={courseIndex} className="bg-[#1E1E1E] text-[#CE9178] px-2 py-1 rounded-md text-xs">
+                            {certifications}
+                          </span>
+                        ))}
+                         </div>
                     </div>
 
                     <div className="mt-2">
@@ -242,7 +271,7 @@ export function Education() {
               </div>
             </div>
           )}
-        </div> */}
+        </div>
 
         {/* Certifications */}
         {/* <div className="bg-[#252526] border border-[#3C3C3C] rounded-md overflow-hidden">

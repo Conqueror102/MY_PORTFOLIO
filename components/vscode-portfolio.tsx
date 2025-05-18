@@ -49,29 +49,34 @@ export function VSCodePortfolio({ initialSection = "Home.jsx" }: VSCodePortfolio
   // Sample gallery images
   const galleryImages = [
     {
-      src: "/placeholder.svg?height=600&width=800",
+      src: "/lims.png",
       alt: "Project Screenshot 1",
-      caption: "Homepage design for an e-commerce website",
+      caption: "A Saas Website",
     },
     {
-      src: "/placeholder.svg?height=600&width=800",
+      src: "/gentle.png",
       alt: "Project Screenshot 2",
-      caption: "Mobile app UI for a fitness tracking application",
+      caption: "A Fashion E-commerce Website",
     },
     {
-      src: "/placeholder.svg?height=600&width=800",
+      src: "/med-ark.png",
       alt: "Project Screenshot 3",
-      caption: "Dashboard interface for a data analytics platform",
+      caption: "Medical staffing platform",
     },
     {
-      src: "/placeholder.svg?height=600&width=800",
+      src: "/peviacom.png",
       alt: "Project Screenshot 4",
-      caption: "Landing page design for a SaaS product",
+      caption: "Solar Energy Solutions & Product eCommerce Website",
     },
     {
-      src: "/placeholder.svg?height=600&width=800",
+      src: "/quiz-app.png",
       alt: "Project Screenshot 5",
-      caption: "User profile page for a social media application",
+      caption: "A modern, interactive quiz application",
+    },
+    {
+      src: "/WAS.png",
+      alt: "Project Screenshot 5",
+      caption: "Study Abroad Consultancy Website  ",
     },
   ]
 

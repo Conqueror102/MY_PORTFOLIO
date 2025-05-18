@@ -12,7 +12,7 @@ interface GenerateMetadataProps {
 }
 
 export function generateMetadata({ title, description, path, keywords = [], image }: GenerateMetadataProps): Metadata {
-  const baseUrl = "https://your-portfolio-domain.com" // Replace with your actual domain
+  const baseUrl = "https://victor-onyemaechi.vercel.app" // Replace with your actual domain
   const url = `${baseUrl}${path}`
   const ogImage = image || `${baseUrl}/og-image.jpg`
 

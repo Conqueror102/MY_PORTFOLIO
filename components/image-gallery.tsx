@@ -13,6 +13,9 @@ interface ImageGalleryProps {
   }[]
 }
 
+
+
+
 export function ImageGallery({ title = "Project Gallery", images }: ImageGalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isFullscreen, setIsFullscreen] = useState(false)
