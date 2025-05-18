@@ -191,11 +191,7 @@ export function VSCodeLayout({ children, activeSection, setActiveSection }: VSCo
   if (!isMounted) {
     return (
       <div
-        className="flex flex-col h-screen font-mono text-sm transition-colors duration-200 border border-gray-700 rounded-lg shadow-xl mx-auto my-4 max-w-[1200px] "
-        style={{
-          backgroundColor: defaultTheme.background,
-          color: defaultTheme.foreground,
-        }}
+        
       >
         {/* Static version for server-side rendering */}
         <div
@@ -212,7 +208,7 @@ export function VSCodeLayout({ children, activeSection, setActiveSection }: VSCo
           </div>
         </div>
 
-        <div className="flex flex-1 overflow-hidden">
+        <div className="flex flex-1 overflow-hidden ">
           {/* Static content area */}
           <div className="flex-1 overflow-auto p-4" style={{ backgroundColor: defaultTheme.background }}>
             {children}
@@ -269,7 +265,7 @@ export function VSCodeLayout({ children, activeSection, setActiveSection }: VSCo
         </div>
       </div>
 
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 overflow-auto ">
         {/* Activity Bar */}
         <div
           className="w-12 flex-shrink-0 flex flex-col items-center py-2 border-r"
@@ -289,7 +285,7 @@ export function VSCodeLayout({ children, activeSection, setActiveSection }: VSCo
           {/* <button className="p-2 rounded mb-2 hover:bg-opacity-20 hover:bg-white" title="Search">
             <Search className="w-5 h-5" style={{ color: theme.activityBarForeground }} />
           </button> */}
-{/* 
+        {/* 
           <button className="p-2 rounded mb-2 hover:bg-opacity-20 hover:bg-white" title="Source Control">
             <Code className="w-5 h-5" style={{ color: theme.activityBarForeground }} />
           </button> */}

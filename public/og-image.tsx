@@ -22,7 +22,7 @@ export async function GET() {
         padding: "40px",
       }}
     >
-      <div style={{ fontSize: 64, color: "#569CD6", marginBottom: 20 }}>Your Name</div>
+      <div style={{ fontSize: 64, color: "#569CD6", marginBottom: 20 }}>Victor Onyemaechi</div>
       <div style={{ fontSize: 48, color: "#D4D4D4" }}>Full Stack Developer</div>
       <div
         style={{

@@ -66,7 +66,7 @@ export function Hero() {
   // Server-side rendering fallback
   if (!isMounted) {
     return (
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl  mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 items-center">
           <div>
             <div className="text-[#6A9955] text-xl md:text-2xl mb-2">// Hi, I'm a Developer</div>
@@ -144,7 +144,7 @@ export function Hero() {
               </code>
             </pre>
             <div className="flex justify-center mt-2">
-              <a href="path/to/your/cv.pdf" download="your_cv_filename.pdf">
+              <a href="/victors CV.docx" download="Victors Cv.docx">
         <button className="bg-[#007ACC] hover:bg-[#0062A3] text-white px-6 py-2 rounded-md transition-colors duration-200">
           Download CV
           <Download className="inline-block ml-2" />

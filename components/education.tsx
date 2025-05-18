@@ -26,89 +26,89 @@ export function Education() {
     }))
   }
 
-  const education = [
-    {
-      degree: "Master of Science in Computer Science",
-      institution: "Stanford University",
-      location: "Stanford, CA",
-      period: "2018 - 2020",
-      description:
-        "Specialized in Artificial Intelligence and Machine Learning. Thesis on 'Deep Learning Applications in Web Development'.",
-      gpa: "3.9/4.0",
-      courses: ["Advanced Algorithms", "Machine Learning", "Neural Networks", "Web Systems"],
-    },
-    {
-      degree: "Bachelor of Science in Computer Science",
-      institution: "MIT",
-      location: "Cambridge, MA",
-      period: "2014 - 2018",
-      description:
-        "Focused on Software Engineering and Web Development. Participated in multiple hackathons and coding competitions.",
-      gpa: "3.8/4.0",
-      courses: ["Data Structures", "Algorithms", "Database Systems", "Web Programming"],
-    },
-  ]
+  // const education = [
+  //   {
+  //     degree: "Master of Science in Computer Science",
+  //     institution: "Stanford University",
+  //     location: "Stanford, CA",
+  //     period: "2018 - 2020",
+  //     description:
+  //       "Specialized in Artificial Intelligence and Machine Learning. Thesis on 'Deep Learning Applications in Web Development'.",
+  //     gpa: "3.9/4.0",
+  //     courses: ["Advanced Algorithms", "Machine Learning", "Neural Networks", "Web Systems"],
+  //   },
+  //   {
+  //     degree: "Bachelor of Science in Computer Science",
+  //     institution: "MIT",
+  //     location: "Cambridge, MA",
+  //     period: "2014 - 2018",
+  //     description:
+  //       "Focused on Software Engineering and Web Development. Participated in multiple hackathons and coding competitions.",
+  //     gpa: "3.8/4.0",
+  //     courses: ["Data Structures", "Algorithms", "Database Systems", "Web Programming"],
+  //   },
+  // ]
 
-  const certifications = [
-    {
-      name: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "2022",
-      credentialId: "AWS-12345",
-      url: "https://aws.amazon.com/certification/",
-    },
-    {
-      name: "Google Professional Cloud Developer",
-      issuer: "Google Cloud",
-      date: "2021",
-      credentialId: "GCP-67890",
-      url: "https://cloud.google.com/certification/cloud-developer",
-    },
-    {
-      name: "Meta Frontend Developer Professional Certificate",
-      issuer: "Meta (Facebook)",
-      date: "2021",
-      credentialId: "META-54321",
-      url: "https://www.coursera.org/professional-certificates/meta-front-end-developer",
-    },
-    {
-      name: "TensorFlow Developer Certificate",
-      issuer: "Google",
-      date: "2020",
-      credentialId: "TF-09876",
-      url: "https://www.tensorflow.org/certificate",
-    },
-  ]
+  // const certifications = [
+  //   {
+  //     name: "AWS Certified Solutions Architect",
+  //     issuer: "Amazon Web Services",
+  //     date: "2022",
+  //     credentialId: "AWS-12345",
+  //     url: "https://aws.amazon.com/certification/",
+  //   },
+  //   {
+  //     name: "Google Professional Cloud Developer",
+  //     issuer: "Google Cloud",
+  //     date: "2021",
+  //     credentialId: "GCP-67890",
+  //     url: "https://cloud.google.com/certification/cloud-developer",
+  //   },
+  //   {
+  //     name: "Meta Frontend Developer Professional Certificate",
+  //     issuer: "Meta (Facebook)",
+  //     date: "2021",
+  //     credentialId: "META-54321",
+  //     url: "https://www.coursera.org/professional-certificates/meta-front-end-developer",
+  //   },
+  //   {
+  //     name: "TensorFlow Developer Certificate",
+  //     issuer: "Google",
+  //     date: "2020",
+  //     credentialId: "TF-09876",
+  //     url: "https://www.tensorflow.org/certificate",
+  //   },
+  // ]
 
   const courses = [
-    {
-      name: "Advanced React and Redux",
-      platform: "Udemy",
-      instructor: "Stephen Grider",
-      completionDate: "2023",
-      url: "https://www.udemy.com/course/react-redux/",
-    },
-    {
-      name: "Next.js & React - The Complete Guide",
-      platform: "Udemy",
-      instructor: "Maximilian Schwarzmüller",
-      completionDate: "2023",
-      url: "https://www.udemy.com/course/nextjs-react-the-complete-guide/",
-    },
+    // {
+    //   name: "Advanced React and Redux",
+    //   platform: "Udemy",
+    //   instructor: "Stephen Grider",
+    //   completionDate: "2023",
+    //   url: "https://www.udemy.com/course/react-redux/",
+    // },
+    // {
+    //   name: "Next.js & React - The Complete Guide",
+    //   platform: "Udemy",
+    //   instructor: "Maximilian Schwarzmüller",
+    //   completionDate: "2023",
+    //   url: "https://www.udemy.com/course/nextjs-react-the-complete-guide/",
+    // },
     {
       name: "TypeScript: The Complete Developer's Guide",
       platform: "Udemy",
       instructor: "Stephen Grider",
-      completionDate: "2022",
+      completionDate: "2025",
       url: "https://www.udemy.com/course/typescript-the-complete-developers-guide/",
     },
-    {
-      name: "CS50: Introduction to Computer Science",
-      platform: "Harvard University (edX)",
-      instructor: "David J. Malan",
-      completionDate: "2019",
-      url: "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x",
-    },
+    // {
+    //   name: "CS50: Introduction to Computer Science",
+    //   platform: "Harvard University (edX)",
+    //   instructor: "David J. Malan",
+    //   completionDate: "2019",
+    //   url: "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x",
+    // },
   ]
 
   return (
@@ -125,22 +125,22 @@ export function Education() {
             <span className="text-[#569CD6]">const</span> <span className="text-[#4FC1FF]">education</span>{" "}
             <span className="text-white">=</span> <span className="text-[#DCDCAA]">{"{"}</span>
             <br />
-            <span className="text-[#9CDCFE]"> degrees</span>
+            <span className="text-[#9CDCFE]"> schools</span>
             <span className="text-white">:</span> <span className="text-[#DCDCAA]">[</span>
             <br />
             <span className="text-[#DCDCAA]"> {"{"}</span>
             <br />
             <span className="text-[#9CDCFE]"> name</span>
             <span className="text-white">:</span>{" "}
-            <span className="text-[#CE9178]">"Master of Science in Computer Science"</span>
+            <span className="text-[#CE9178]">"Ebenezer Nur/Pry School"</span>
             <span className="text-white">,</span>
             <br />
-            <span className="text-[#9CDCFE]"> institution</span>
-            <span className="text-white">:</span> <span className="text-[#CE9178]">"Stanford University"</span>
+            <span className="text-[#9CDCFE]"> certificate</span>
+            <span className="text-white">:</span> <span className="text-[#CE9178]">"First School Leaving Certificate (FSLC)"</span>
             <span className="text-white">,</span>
             <br />
             <span className="text-[#9CDCFE]"> year</span>
-            <span className="text-white">:</span> <span className="text-[#B5CEA8]">2020</span>
+            <span className="text-white">:</span> <span className="text-[#B5CEA8]">2010-2016</span>
             <br />
             <span className="text-[#DCDCAA]"> {"}"}</span>
             <span className="text-white">,</span>
@@ -149,21 +149,21 @@ export function Education() {
             <br />
             <span className="text-[#9CDCFE]"> name</span>
             <span className="text-white">:</span>{" "}
-            <span className="text-[#CE9178]">"Bachelor of Science in Computer Science"</span>
+            <span className="text-[#CE9178]">"Awodi-ora Senior Secondary School "</span>
             <span className="text-white">,</span>
             <br />
-            <span className="text-[#9CDCFE]"> institution</span>
-            <span className="text-white">:</span> <span className="text-[#CE9178]">"MIT"</span>
+            <span className="text-[#9CDCFE]"> certificate</span>
+            <span className="text-white">:</span> <span className="text-[#CE9178]">"West African Examination Council (WAEC)"</span>
             <span className="text-white">,</span>
             <br />
             <span className="text-[#9CDCFE]"> year</span>
-            <span className="text-white">:</span> <span className="text-[#B5CEA8]">2018</span>
+            <span className="text-white">:</span> <span className="text-[#B5CEA8]">2016-2022</span>
             <br />
             <span className="text-[#DCDCAA]"> {"}"}</span>
             <br />
             <span className="text-[#DCDCAA]"> ]</span>
             <span className="text-white">,</span>
-            <br />
+            {/* <br />
             <span className="text-[#9CDCFE]"> certifications</span>
             <span className="text-white">:</span> <span className="text-[#DCDCAA]">[</span>
             <span className="text-[#CE9178]">"AWS Certified Solutions Architect"</span>
@@ -172,7 +172,7 @@ export function Education() {
             <span className="text-white">,</span> <span className="text-[#CE9178]">"Meta Frontend Developer"</span>
             <span className="text-[#DCDCAA]">]</span>
             <span className="text-white">,</span>
-            <br />
+            <br /> */}
             <span className="text-[#9CDCFE]"> continuousLearning</span>
             <span className="text-white">:</span> <span className="text-[#569CD6]">true</span>
             <br />
@@ -184,7 +184,7 @@ export function Education() {
 
       <div className="space-y-6">
         {/* Formal Education */}
-        <div className="bg-[#252526] border border-[#3C3C3C] rounded-md overflow-hidden">
+        {/* <div className="bg-[#252526] border border-[#3C3C3C] rounded-md overflow-hidden">
           <button
             className="w-full flex items-center justify-between p-4 text-left"
             onClick={() => toggleSection("education")}
@@ -242,10 +242,10 @@ export function Education() {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
 
         {/* Certifications */}
-        <div className="bg-[#252526] border border-[#3C3C3C] rounded-md overflow-hidden">
+        {/* <div className="bg-[#252526] border border-[#3C3C3C] rounded-md overflow-hidden">
           <button
             className="w-full flex items-center justify-between p-4 text-left"
             onClick={() => toggleSection("certifications")}
@@ -290,7 +290,7 @@ export function Education() {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
 
         {/* Online Courses */}
         <div className="bg-[#252526] border border-[#3C3C3C] rounded-md overflow-hidden">
