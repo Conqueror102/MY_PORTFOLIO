@@ -118,17 +118,23 @@ export const metadata: Metadata = {
     // bing: "your-bing-verification-code",
   },
 
-  // Theme color
-  themeColor: "#1e1e1e", // VS Code dark theme color
-
+ 
   // Viewport
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
+  // viewport: {
+  //   width: "device-width",
+  //   initialScale: 1,
+  //   maximumScale: 1,
+  // },
     generator: 'v0.dev'
 }
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: "#007acc", // optional but now correctly placed
+};
+
 
 export default function RootLayout({
   children,

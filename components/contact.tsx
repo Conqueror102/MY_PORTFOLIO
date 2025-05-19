@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import axios from 'axios';
 import { useState } from "react"
 import { Mail, Send, Github, Linkedin, MessageSquare } from "lucide-react"
 
@@ -22,7 +22,8 @@ export function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     // Add command to history
@@ -30,12 +31,25 @@ export function Contact() {
       ...prev,
       `$ send-message --name="${formData.name}" --email="${formData.email}"`,
       "> Processing message...",
-      "> Message sent successfully!",
     ])
 
-    // Reset form
+    try {
+      const response = await axios.post("/api/send-mail", formData)
+
+      setCommandHistory((prev) => [
+        ...prev,
+        `> ${response.data.message || "Message sent successfully!"}`,
+      ])
+    } catch (error: any) {
+      setCommandHistory((prev) => [
+        ...prev,
+        `> Error: ${error.response?.data?.message || error.message}`,
+      ])
+    }
+
     setFormData({ name: "", email: "", message: "" })
   }
+
 
   return (
     <div className="max-w-3xl mx-auto">

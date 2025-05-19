@@ -82,10 +82,13 @@ export function Hero() {
 
           <div className="flex justify-center">
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-lg overflow-hidden border-4 border-[#569CD6] shadow-lg">
-              <img
-                src="/me2.png"
+              <Image
+                src="/me2.jpg"
                 alt="Developer Profile"
                 className="w-full h-full object-cover"
+                width={320}
+                height={320}
+                 priority 
               />
             </div>
           </div>
@@ -162,6 +165,7 @@ export function Hero() {
                 className="w-full h-full object-cover"
                 width={320}
                 height={320}
+                priority
               />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E] to-transparent opacity-60"></div>
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
