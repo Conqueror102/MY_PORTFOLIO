@@ -1,3 +1,4 @@
+import axios from "axios"
 import {
   ArrowRight,
   Award,
@@ -59,6 +60,7 @@ function Navbar() {
     typeof window !== 'undefined' ? localStorage.getItem('portfolioUserType') || 'client' : 'client'
   );
 
+  
   const handleSwitch = (type: string) => {
     setUserType(type);
     if (typeof window !== 'undefined') {
@@ -732,6 +734,31 @@ function EducationSection() {
 
 
 function ContactSection() {
+  const [formData, setFormData] = React.useState({
+    name: "",
+    email: "",
+    message: "",
+  })
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+ 
+
+    try {
+      const response = await axios.post("/api/send-mail", formData)
+      console.log(response.data.message || "Message sent successfully!")
+    } catch (error: any) {
+      console.log(error.response?.data?.message || error.message)
+    }
+
+    setFormData({ name: "", email: "", message: "" })
+  }
+
   return (
     <section id="contact" className="py-20 relative">
       <div className="absolute top-0 right-0 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl"></div>
@@ -823,12 +850,14 @@ function ContactSection() {
                 </div>
               </div>
               <div className="p-8 md:p-12">
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                       Name
                     </label>
                     <input
+                    value={formData.name}
+                    onChange={handleChange}
                       type="text"
                       id="name"
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all"
@@ -840,13 +869,15 @@ function ContactSection() {
                       Email
                     </label>
                     <input
+                    value={formData.email}
+                    onChange={handleChange}
                       type="email"
                       id="email"
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all"
                       placeholder="your.email@example.com"
                     />
                   </div>
-                  <div>
+                  {/* <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
                       Subject
                     </label>
@@ -856,7 +887,7 @@ function ContactSection() {
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all"
                       placeholder="Project inquiry"
                     />
-                  </div>
+                  </div> */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                       Message
@@ -864,6 +895,8 @@ function ContactSection() {
                     <textarea
                       id="message"
                       rows={4}
+                      value={formData.message}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all"
                       placeholder="Your message"
                     ></textarea>
