@@ -140,9 +140,31 @@ export function Hero() {
           </div>
 
           <div className="bg-[#1E1E1E] border border-[#3C3C3C] rounded-md p-4 mb-6">
-            <pre className="font-mono text-sm md:text-base whitespace-pre-wrap">
+            <pre className="font-mono text-base md:text-lg whitespace-pre-wrap">
               <code>
-                <span className="text-[#569CD6]">{text}</span>
+                {/* Typing animation with VS Code theme highlights */}
+                {(() => {
+                  // Highlight as the text types out
+                  const highlight = (typed: string) => {
+                    // Regex to match the name, skills, and passion values
+                    let out = typed
+                      .replace(/\b(const|skills|passion|title|name)\b/g, '<span class="text-[#569CD6]">$1</span>')
+                      .replace(/('Victor Onyemaechi')/g, '<span class="text-[#CE9178] font-semibold">$1</span>')
+                      .replace(/(developer)/g, '<span class="text-[#4FC1FF]">$1</span>')
+                      .replace(/('Full Stack Developer')/g, '<span class="text-[#CE9178] font-semibold">$1</span>')
+                      .replace(/('React')/g, '<span class="text-[#CE9178] font-semibold">$1</span>')
+                      .replace(/('Next\.js')/g, '<span class="text-[#CE9178] font-semibold">$1</span>')
+                      .replace(/('TypeScript')/g, '<span class="text-[#CE9178] font-semibold">$1</span>')
+                      .replace(/('Node\.js, javascript')/g, '<span class="text-[#CE9178] font-semibold">$1</span>')
+                      .replace(/('HTML')/g, '<span class="text-[#CE9178] font-semibold">$1</span>')
+                      .replace(/('CSS')/g, '<span class="text-[#CE9178] font-semibold">$1</span>')
+                      .replace(/('Building beautiful web experiences')/g, '<span class="text-[#CE9178] font-semibold">$1</span>');
+                    return out;
+                  };
+                  return (
+                    <span dangerouslySetInnerHTML={{ __html: highlight(text) }} />
+                  );
+                })()}
                 {isTyping && <span className="animate-pulse">|</span>}
               </code>
             </pre>

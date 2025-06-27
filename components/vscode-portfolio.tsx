@@ -4,6 +4,8 @@ import { useEffect, useState, Suspense } from "react"
 import dynamic from "next/dynamic"
 import { VSCodeLayout } from "@/components/vscode-layout"
 import { LoadingPlaceholder } from "@/components/loading-placeholder"
+import { Modal } from "@/components/ui/modal"
+import ClientPortfolio from "@/components/client-portfolio"
 
 // Import components with SSR enabled but with loading states
 const Hero = dynamic(() => import("@/components/hero").then((mod) => mod.Hero), {
@@ -45,6 +47,8 @@ interface VSCodePortfolioProps {
 export function VSCodePortfolio({ initialSection = "Home.jsx" }: VSCodePortfolioProps) {
   const [activeSection, setActiveSection] = useState(initialSection)
   const [isMounted, setIsMounted] = useState(false)
+  const [userType, setUserType] = useState<string | null>(null)
+  const [showModal, setShowModal] = useState(false)
 
   // Sample gallery images
   const galleryImages = [
@@ -82,10 +86,20 @@ export function VSCodePortfolio({ initialSection = "Home.jsx" }: VSCodePortfolio
 
   useEffect(() => {
     setIsMounted(true)
+    const storedType = typeof window !== 'undefined' ? localStorage.getItem('portfolioUserType') : null
+    if (storedType) {
+      setUserType(storedType)
+    } else {
+      setShowModal(true)
+    }
   }, [])
 
-  // Render a simplified version for server-side rendering
-  // This will be replaced with the client-side version after hydration
+  const handleUserType = (type: string) => {
+    setUserType(type)
+    localStorage.setItem('portfolioUserType', type)
+    setShowModal(false)
+  }
+
   if (!isMounted) {
     return (
       <div className="h-screen w-full bg-[#1E1E1E] flex items-center justify-center">
@@ -95,6 +109,25 @@ export function VSCodePortfolio({ initialSection = "Home.jsx" }: VSCodePortfolio
         </div>
       </div>
     )
+  }
+
+  if (showModal) {
+    return (
+      <Modal>
+        <div className="p-6 text-center">
+          <h2 className="text-2xl font-bold mb-4">Who are you?</h2>
+          <p className="mb-6 text-gray-500">Choose your experience:</p>
+          <div className="flex justify-center gap-4">
+            <button className="bg-[#007ACC] hover:bg-[#005A9E] text-white px-6 py-2 rounded-md font-semibold transition" onClick={() => handleUserType('developer')}>Developer</button>
+            <button className="bg-[#252526] hover:bg-[#007ACC] text-white px-6 py-2 rounded-md font-semibold border border-[#3C3C3C] transition" onClick={() => handleUserType('client')}>Client</button>
+          </div>
+        </div>
+      </Modal>
+    )
+  }
+
+  if (userType === 'client') {
+    return <ClientPortfolio />
   }
 
   return (

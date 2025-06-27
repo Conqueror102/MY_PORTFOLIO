@@ -187,6 +187,20 @@ export function VSCodeLayout({ children, activeSection, setActiveSection }: VSCo
     { icon: <Mail className="w-5 h-5" />, url: "mailto:victorvector608@gmail.com", label: "Email" },
   ]
 
+  // Dropdown state for switching views
+  const [openDropdown, setOpenDropdown] = React.useState(false);
+  const [userType, setUserType] = React.useState(() =>
+    typeof window !== 'undefined' ? localStorage.getItem('portfolioUserType') || 'developer' : 'developer'
+  );
+
+  const handleSwitch = (type: string) => {
+    setUserType(type);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('portfolioUserType', type);
+      window.location.reload();
+    }
+  };
+
   // Server-side rendering fallback
   if (!isMounted) {
     return (
@@ -262,6 +276,40 @@ export function VSCodeLayout({ children, activeSection, setActiveSection }: VSCo
               </option>
             ))}
           </select>
+          {/* Dropdown for switching views (VS Code style) */}
+          <div className="relative">
+            <button
+              className="ml-2 px-2 py-1 bg-[#252526] border border-[#3C3C3C] text-xs text-[#CCCCCC] font-mono flex items-center gap-1 focus:outline-none"
+              style={{ borderRadius: 2, minWidth: 110 }}
+              onClick={() => setOpenDropdown((prev) => !prev)}
+            >
+              {userType === 'developer' ? 'Developer View' : 'Client View'}
+              <svg className="w-3 h-3 text-[#CCCCCC]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {openDropdown && (
+              <div
+                className="absolute right-0 mt-1 w-36 border border-[#3C3C3C] bg-[#252526] text-xs font-mono z-50"
+                style={{ borderRadius: 2 }}
+              >
+                <button
+                  className={`block w-full text-left px-4 py-2 transition-colors ${userType === 'client' ? 'bg-[#007ACC] text-white' : 'text-[#CCCCCC] hover:bg-[#2C2C32] hover:text-white'}`}
+                  style={{ borderTopLeftRadius: 2, borderTopRightRadius: 2 }}
+                  onClick={() => { handleSwitch('client'); setOpenDropdown(false); }}
+                >
+                  Client View
+                </button>
+                <button
+                  className={`block w-full text-left px-4 py-2 transition-colors ${userType === 'developer' ? 'bg-[#007ACC] text-white' : 'text-[#CCCCCC] hover:bg-[#2C2C32] hover:text-white'}`}
+                  style={{ borderBottomLeftRadius: 2, borderBottomRightRadius: 2 }}
+                  onClick={() => { handleSwitch('developer'); setOpenDropdown(false); }}
+                >
+                  Developer View
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 

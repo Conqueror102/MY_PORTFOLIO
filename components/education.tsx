@@ -378,7 +378,7 @@ export function Education() {
           knowledge and skills.
         </p>
         <a
-          href="https://wa.me/08025383208?text=Hi%20there!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20your%20educational%20background."
+          href="https://wa.me/+2348025383208?text=Hi%20there!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20your%20educational%20background."
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#25D366] hover:bg-[#128C7E] text-white px-6 py-2 rounded-md transition-colors duration-200 inline-flex items-center"
