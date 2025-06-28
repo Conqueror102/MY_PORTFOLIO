@@ -21,20 +21,125 @@ const portfolioInfo = {
   image: "https://victor-onyemaechi.vercel.app/og-image", // Updated to use dynamic OG image route
   twitterHandle: "@TECH_snitch101", // Replace with your Twitter handle
   keywords: [
-    "full stack developer",
-    "react developer",
-    "next.js developer",
-    "typescript developer",
-    "web developer portfolio",
-    "software engineer",
-    "frontend developer",
-    "backend developer",
-    "fullstack developer in lagos",
-    "fullstack developer in nigeria",
-    "backend developer needed",
-    "frontend developer needed",
-    "a skilled software enginneer need",
-  ],
+      "full stack developer",
+      "react developer",
+      "next.js developer",
+      "typescript developer",
+      "web developer portfolio",
+      "software engineer",
+      "frontend developer",
+      "backend developer",
+      "fullstack developer in lagos",
+      "fullstack developer in nigeria",
+      "backend developer needed",
+      "frontend developer needed",
+      "skilled software engineer needed",
+      "mobile app developer lagos",
+      "mobile app developer nigeria",
+      "hire frontend developer lagos",
+      "hire backend developer nigeria",
+      "remote full stack developer",
+      "freelance web developer lagos",
+      "hire mobile app developer",
+      "remote react developer jobs",
+      "javascript developer lagos",
+      "node.js developer nigeria",
+      "hire software engineer nigeria",
+      "lagos software developer jobs",
+      "top frontend developer in lagos",
+      "next.js developer for hire",
+      "best full stack developer in nigeria",
+      "mobile app developer needed",
+      "web developer near me lagos",
+    
+    "MERN Stack Developer", // Core specialization [1]
+    "MongoDB", // Database for MERN [2]
+    "Express.js", // Backend framework for MERN [3]
+    "React.js", // Frontend library for MERN [2]
+    "Node.js", // Backend runtime for MERN [2]
+    "full stack developer", // Your existing keyword, still highly relevant [2]
+    "react developer", // Your existing keyword, reinforce frontend expertise [2]
+    "next.js developer", // Your existing keyword, for server-side rendering with React
+    "typescript developer", // Your existing keyword, crucial for modern MERN [1]
+    "web developer portfolio", // Your existing keyword
+    "software engineer", // Broad, essential title [4]
+    "frontend developer", // Your existing keyword [2]
+    "backend developer", // Your existing keyword [2]
+    "fullstack developer in lagos", // Your existing keyword, local focus
+    "fullstack developer in nigeria", // Your existing keyword, local focus
+    "backend developer needed", // Your existing keyword
+    "frontend developer needed", // Your existing keyword
+    "a skilled software enginneer need", // Your existing keyword (consider rephrasing to "skilled software engineer")
+
+    // MERN Stack Specifics & Related Technologies
+    "MERN Stack Engineer",
+    "JavaScript", // Foundational for MERN [2]
+    "RESTful APIs", // Essential for MERN backend [3]
+    "API Development", // General API work [5]
+    "NoSQL Database", // For MongoDB [5]
+    "State Management (React)", // E.g., Redux, Context API
+    "User Interface (UI) Development", // Frontend focus [5]
+    "User Experience (UX) Design", // Related to UI [5]
+    "Web Application Development", // General web apps [5]
+    "Single Page Application (SPA)", // Common with React
+    "JSON", // Data format used with APIs
+    "Authentication (Node.js)", // E.g., JWT, OAuth
+    "Authorization (Node.js)",
+    "Server-side Development",
+    "Client-side Development",
+
+    // Cloud & DevOps (Highly in-demand globally, for deploying MERN apps)
+    "AWS Cloud", // Amazon Web Services expertise [6]
+    "Azure Cloud", // Microsoft Azure expertise [7]
+    "Google Cloud Platform (GCP)", // GCP expertise [6]
+    "DevOps Engineer", // For infrastructure and deployment [5]
+    "Docker", // Containerization tool [1]
+    "Kubernetes", // Container orchestration [1]
+    "CI/CD Pipelines", // Continuous Integration/Continuous Deployment [8]
+    "Cloud Deployment",
+    "Heroku", // Popular for MERN deployment
+    "Vercel", // Popular for Next.js deployment
+    "Netlify", // Popular for frontend deployment
+
+    // Emerging Technologies (If you have experience or are looking to specialize)
+    "AI Engineer", // Artificial Intelligence roles are skyrocketing [9, 10]
+    "Machine Learning Engineer", // ML model development and deployment [11, 12]
+    "Blockchain Developer", // High demand, especially in Nigeria [13, 14]
+    "Web3 Developer", // Broader decentralized web technologies [14]
+    "Data Scientist", // For data analysis and insights [11]
+    "Data Engineer", // For data pipelines and architecture [5]
+    "Cybersecurity Engineer", // Increasing demand for security [11]
+    "Mobile Developer", // If you build mobile apps [15]
+    "React Native Developer", // For cross-platform mobile development [11]
+    "Flutter Developer", // For cross-platform mobile development [1]
+
+    // Industry-Specific (Local & Global relevance)
+    "Fintech Developer", // Nigeria is a fintech hub [16]
+    "E-commerce Developer", // Growing online market [2]
+    "Health Tech Developer", // Emerging sector with global demand [17, 18]
+    "Digital Payments", // Key in fintech [16]
+    "Paystack Integration", // Specific to Nigerian e-commerce/fintech [19]
+    "Flutterwave Integration", // Specific to Nigerian e-commerce/fintech [19]
+    "Regulatory Compliance (Fintech)", // Important for local fintech roles [20]
+
+    // Soft Skills (Integrate into project descriptions and summaries, not just as standalone keywords)
+    "Problem-solving", // Highly valued by recruiters [3]
+    "Communication skills", // Essential for team collaboration [3]
+    "Collaboration", // Working effectively in teams [21]
+    "System Design", // For architectural roles [3]
+    "Agile Development", // Common methodology [22]
+    "Scrum Methodology", // Agile framework [22]
+    "Results-driven", // Focus on impact [6]
+    "Autonomy", // Ability to work independently [6]
+    "Leadership", // Taking initiative [3]
+
+    // Location & Remote Terms
+    "Remote Developer", // For international opportunities [10]
+    "Work From Home Developer", // Common remote search term [11]
+    "Worldwide Remote", // Broadens search scope [23]
+    "Global Remote", // Emphasizes international reach [6]
+    "International Remote", // Another term for global opportunities [9]
+  ]
 }
 
 // Define metadata
