@@ -31,7 +31,7 @@ import React from "react"
 
 export default function ClientPortfolio() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-gray-50 font-sans text-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-white to-blue-100 font-sans text-gray-800">
       <Navbar />
       <main>
         <HeroSection />
@@ -74,13 +74,13 @@ function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
-      <div className="container mx-auto md:px-16 sm:px-6 py-4">
+      <div className="container mx-auto md:px-16 sm:px-6 max-sm:py-1 py-4">
         <div className="flex items-center justify-between">
-          <a href="#home" className="text-xl flex items-center font-bold hover:text-violet-500 transition-colors">
+          <a href="#home" className="text-xl flex items-center font-bold hover:text-blue-600 transition-colors">
             <div>
               <img src="/victor logo.jpg" alt="" className="h-14 w-14"/>
             </div>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-blue-400">
               Victor.Conqueror
             </span>
           </a>
@@ -89,7 +89,7 @@ function Navbar() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-gray-600 hover:text-violet-500 transition-colors text-sm font-medium"
+                className="text-gray-600 hover:text-blue-600 transition-colors text-sm font-medium"
               >
                 {item}
               </a>
@@ -99,7 +99,7 @@ function Navbar() {
 {/* Dropdown for switching views */}
 <div className="relative max-sm:hidden">
               <button
-                className="px-4 py-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white rounded-full font-semibold shadow hover:shadow-lg focus:outline-none"
+                className="px-4 py-2 bg-gradient-to-r from-blue-700 to-blue-400 text-white rounded-full font-semibold shadow hover:shadow-lg focus:outline-none"
                 onClick={() => setOpen((prev) => !prev)}
               >
                 {userType === 'developer' ? 'Developer View' : 'Client View'}
@@ -110,13 +110,13 @@ function Navbar() {
               {open && (
                 <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
                   <button
-                    className={`block w-full text-left px-4 py-2 hover:bg-violet-100 rounded-t-lg ${userType === 'client' ? 'font-bold text-violet-600' : ''}`}
+                    className={`block w-full text-left px-4 py-2 hover:bg-blue-100 rounded-t-lg ${userType === 'client' ? 'font-bold text-blue-600' : ''}`}
                     onClick={() => { handleSwitch('client'); setOpen(false); }}
                   >
                     Client View
                   </button>
                   <button
-                    className={`block w-full text-left px-4 py-2 hover:bg-violet-100 rounded-b-lg ${userType === 'developer' ? 'font-bold text-violet-600' : ''}`}
+                    className={`block w-full text-left px-4 py-2 hover:bg-blue-100 rounded-b-lg ${userType === 'developer' ? 'font-bold text-blue-600' : ''}`}
                     onClick={() => { handleSwitch('developer'); setOpen(false); }}
                   >
                     Developer View
@@ -126,7 +126,7 @@ function Navbar() {
             </div>
             
             {/* Hamburger for mobile */}
-            <button className="md:hidden text-gray-800" onClick={() => setMobileMenu((prev) => !prev)}>
+            <button className="md:hidden text-blue-500 bg-blue-500/10 rounded-full p-2" onClick={() => setMobileMenu((prev) => !prev)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -140,13 +140,15 @@ function Navbar() {
           </div>
         </div>
         {/* Mobile menu */}
-        {mobileMenu && (
-          <nav className="md:hidden mt-4 flex flex-col gap-2 bg-white rounded-2xl shadow-lg p-4 border border-gray-100">
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out z-40 ${mobileMenu ? 'max-h-[500px] opacity-100 ' : 'max-h-0 opacity-0 mt-0'}`}
+        >
+          <nav className="flex flex-col gap-2 bg-white rounded-2xl shadow-lg p-4 border border-gray-100 pointer-events-auto">
             {navLinks.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="block text-gray-600 hover:text-violet-500 transition-colors text-base font-medium py-2 px-2 rounded-lg"
+                className="block text-gray-600 hover:text-blue-600 transition-colors text-base font-medium py-2 px-2 rounded-lg"
                 onClick={() => setMobileMenu(false)}
               >
                 {item}
@@ -157,13 +159,13 @@ function Navbar() {
               <div className="font-semibold text-xs text-gray-500 mb-2 pl-1">View Mode</div>
               <div className="flex flex-col gap-1">
                 <button
-                  className={`w-full text-left px-4 py-2 rounded ${userType === 'client' ? 'bg-violet-100 text-violet-700 font-bold' : 'hover:bg-violet-50 text-gray-700'}`}
+                  className={`w-full text-left px-4 py-2 rounded ${userType === 'client' ? 'bg-blue-100 text-blue-700 font-bold' : 'hover:bg-blue-50 text-gray-700'}`}
                   onClick={() => { handleSwitch('client'); setMobileMenu(false); }}
                 >
                   Client View
                 </button>
                 <button
-                  className={`w-full text-left px-4 py-2 rounded ${userType === 'developer' ? 'bg-violet-100 text-violet-700 font-bold' : 'hover:bg-violet-50 text-gray-700'}`}
+                  className={`w-full text-left px-4 py-2 rounded ${userType === 'developer' ? 'bg-blue-100 text-blue-700 font-bold' : 'hover:bg-blue-50 text-gray-700'}`}
                   onClick={() => { handleSwitch('developer'); setMobileMenu(false); }}
                 >
                   Developer View
@@ -171,7 +173,7 @@ function Navbar() {
               </div>
             </div>
           </nav>
-        )}
+        </div>
       </div>
     </header>
   )
@@ -184,16 +186,11 @@ function HeroSection() {
         <div className="flex flex-col md:flex-row items-center md:justify-center gap-8 md:gap-12">
           <div className="w-full md:w-1/2 z-10">
             <div className="relative">
-              <div className="absolute -top-10 -left-10 w-32 h-32 md:w-40 md:h-40 bg-violet-500/20 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 md:w-40 md:h-40 bg-fuchsia-500/20 rounded-full blur-3xl"></div>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in text-gray-800">
-                Hi, I'm{" "}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500">
-                  Victor Onyemaechi
-                </span>
-                <br />
-                <span className="text-2xl sm:text-3xl md:text-5xl">Frontend Engineer & Server Architecturer</span>
-              </h1>
+              <div className="absolute -top-10 -left-10 w-32 h-32 md:w-40 md:h-40 bg-blue-700/20 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-10 -right-10 w-32 h-32 md:w-40 md:h-40 bg-blue-400/20 rounded-full blur-3xl"></div>
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-1 leading-tight animate-fade-in text-gray-800">Hi, I'm <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-blue-400">Victor Onyemaechi</span></h1>
+             
+              <span className="text-2xl sm:text-3xl md:text-5xl">Frontend Engineer & Server Architecturer</span>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 md:mb-10 max-w-2xl animate-fade-in-delay">
                 I craft beautiful, functional digital experiences with a focus on clean design and intuitive user
                 interfaces. Helping businesses stand out in the digital landscape.
@@ -201,14 +198,14 @@ function HeroSection() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href="#projects"
-                  className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 text-sm sm:text-base md:text-lg font-medium text-white bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-fade-in-delay-2"
+                  className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-3 text-sm sm:text-base md:text-lg font-medium text-white bg-gradient-to-r from-blue-700 to-blue-400 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-fade-in-delay-2"
                 >
                   View My Work
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
                 <a
                   href="#contact"
-                  className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 text-sm sm:text-base md:text-lg font-medium text-gray-700 bg-white border border-gray-200 rounded-full shadow-lg hover:shadow-xl hover:bg-gray-50 transform hover:-translate-y-1 transition-all duration-300 animate-fade-in-delay-2"
+                  className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-3 text-sm sm:text-base md:text-lg font-medium text-gray-700 bg-white border border-gray-200 rounded-full shadow-lg hover:shadow-xl hover:bg-gray-50 transform hover:-translate-y-1 transition-all duration-300 animate-fade-in-delay-2"
                 >
                   Contact Me
                 </a>
@@ -216,11 +213,11 @@ function HeroSection() {
             </div>
           </div>
           <div className="w-full md:w-1/2 relative flex justify-center">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-48 sm:h-48 md:w-80 md:h-80 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full blur-3xl opacity-20"></div>
-            <div className="relative z-10 w-full max-w-[400px] sm:max-w-xs md:max-w-md aspect-square rounded-3xl overflow-hidden border-4 border-purple-500 shadow-2xl transform md:rotate-3 hover:rotate-0 transition-all duration-500">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-48 sm:h-48 md:w-80 md:h-80 bg-gradient-to-r from-blue-700 to-blue-400 rounded-full blur-3xl opacity-20"></div>
+            <div className="relative z-10 w-full max-w-[400px] sm:max-w-xs md:max-w-md aspect-square rounded-3xl overflow-hidden border-4 border-blue-700 shadow-2xl transform md:rotate-3 hover:rotate-0 transition-all duration-500">
               <Image src="/me3.jpg" alt="Victor Onyemaechi" fill className="object-cover" />
             </div>
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 md:w-40 md:h-40 bg-teal-500/20 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 md:w-40 md:h-40 bg-blue-200/20 rounded-full blur-3xl"></div>
           </div>
         </div>
       </div>
@@ -238,14 +235,14 @@ function StatsSection() {
   return (
     <section className="py-12  md:px-16">
       <div className="container mx-auto px-6">
-        <div className="bg-[#d846ef36] rounded-3xl shadow-xl overflow-hidden">
+        <div className="bg-blue-100 rounded-3xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-2 md:grid-cols-3">
             {stats.map((stat, index) => (
               <div
                 key={index}
                 className={`p-8 text-center ${index < stats.length - 1 ? "border-r border-gray-100" : ""}`}
               >
-                <div className="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500">
+                <div className="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-blue-400">
                   {stat.value}
                 </div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
@@ -261,7 +258,7 @@ function StatsSection() {
 function AboutSection() {
   return (
     <section id="about" className="py-20 relative">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl"></div>
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-12">
@@ -273,7 +270,7 @@ function AboutSection() {
             <div className="md:w-2/3">
               <div className="inline-block mb-6">
                 <h2 className="text-3xl md:text-4xl font-bold mb-1 text-gray-800">About Me</h2>
-                <div className="h-1 w-20 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full"></div>
+                <div className="h-1 w-20 bg-gradient-to-r from-blue-700 to-blue-400 rounded-full"></div>
               </div>
               <p className="text-gray-600 mb-6 text-lg">
                 I'm a passionate fullstack developer with 1+ years of experience creating modern web applications. I
@@ -291,7 +288,7 @@ function AboutSection() {
                 </button>
                 <Link
                   href="#contact"
-                  className="inline-flex items-center px-6 py-3 text-white bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 font-medium"
+                  className="inline-flex items-center px-6 py-3 text-white bg-gradient-to-r from-blue-700 to-blue-400 rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 font-medium"
                 >
                   <Mail className="mr-2 h-5 w-5" />
                   Hire Me
@@ -346,10 +343,7 @@ function ServicesSection() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">My Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              I offer a comprehensive range of services to help businesses establish a strong online presence and
-              achieve their digital goals.
-            </p>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-700 to-blue-400 rounded-full mb-6 mx-auto"></div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -358,10 +352,10 @@ function ServicesSection() {
                 key={index}
                 className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
               >
-                <div className="w-16 h-16 rounded-2xl text-violet-500  bg-violet-500/10 flex items-center justify-center mb-6 group-hover:bg-gradient-to-r from-violet-500 to-fuchsia-500 group-hover:text-white transition-all duration-300">
+                <div className="w-16 h-16 rounded-2xl text-blue-500  bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-gradient-to-r from-blue-500 to-blue-400 group-hover:text-white transition-all duration-300">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-800 group-hover:text-violet-500 transition-colors">
+                <h3 className="text-xl font-bold mb-4 text-gray-800 group-hover:text-blue-500 transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-gray-600">{service.description}</p>
@@ -396,6 +390,12 @@ function SkillsSection() {
     "Material UI",
     "Vite",
     "Axios",
+    "Git",
+    "GitHub",
+    "Shadcn UI",
+    "Tailwind CSS",
+    "Node.js",
+    "TypeScript",
   ]
 
   return (
@@ -404,15 +404,13 @@ function SkillsSection() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">My Skills</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              I have a diverse set of skills, tools, and technologies to bring your ideas to life.
-            </p>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-700 to-blue-400 rounded-full mb-6 mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {skills.map((skill, index) => (
               <div key={index} className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group">
                 <div className="flex items-center mb-4">
-                  <span className="w-8 h-8 flex items-center text-violet-500 justify-center bg-violet-500/10 rounded-lg mr-3 text-lg shadow-sm">
+                  <span className="w-8 h-8 flex items-center text-blue-500 justify-center bg-blue-500/10 rounded-lg mr-3 text-lg shadow-sm">
                     {skill.icon}
                   </span>
                   <span className="font-medium text-gray-800">{skill.name}</span>
@@ -420,7 +418,7 @@ function SkillsSection() {
                 <span className="text-gray-500">{skill.level}%</span>
                 <div className="h-3 w-full bg-gray-200 rounded-full overflow-hidden mt-2">
                   <div
-                    className="h-full bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full"
+                    className="h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full"
                     style={{ width: `${skill.level}%` }}
                   ></div>
                 </div>
@@ -449,27 +447,24 @@ function SkillsSection() {
 function ProjectsSection() {
   const projects = [
     {
-      title: "E-commerce Platform",
-      description:
-        "A modern e-commerce platform built with Next.js and Tailwind CSS, featuring a clean UI and seamless checkout experience.",
+      title: "A Saas Website",
+      description: "A modern, responsive SaaS website built for an IT solutions company. It features pages for services, products, projects, and company information, with a fully functional contact form and clean, professional UI.",
       image: "/lims.png",
       tags: ["Next.js", "React", "Tailwind CSS", "Stripe"],
-      demoLink: "https://peviacom.com",
+      demoLink: "https:wearelims.com",
+      githubLink: "https://github.com/Conqueror102?tab=repositories",
+    },
+    {
+      title: "A Fashion E-commerce Website",
+      description: "A simple static fashion eCommerce website built using HTML and CSS, showcasing product listings, pricing, and a contact page.",
+      image: "/gentle.png",
+      tags: ["React", "Framer Motion", "Tailwind CSS"],
+      demoLink: "https://gentle-men101.vercel.app/",
       githubLink: "https://github.com/Conqueror102/gentlemen-ecommerce",
     },
     {
-      title: "Portfolio Website",
-      description:
-        "A responsive portfolio website showcasing creative work with smooth animations and intuitive navigation.",
-      image: "/gentle.png",
-      tags: ["React", "Framer Motion", "Tailwind CSS"],
-      demoLink: "https://kode10x-quiz-app.vercel.app/",
-      githubLink: "https://github.com/kode10x-org/Kode10x-quiz-app",
-    },
-    {
-      title: "Task Management App",
-      description:
-        "A productivity app for managing tasks and projects with drag-and-drop functionality and real-time updates.",
+      title: "Medical staffing platform",
+      description: "Medark is an innovative web application designed to streamline the recruitment process in the medical industry by directly connecting hospitals with qualified healthcare professionals.",
       image: "/med-ark.png",
       tags: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
       demoLink: "https://med-ark.vercel.app/",
@@ -480,7 +475,7 @@ function ProjectsSection() {
       description: "A professional, modern website built for a study abroad consultancy agency that specializes in helping students apply to UK universities.",
       image: "/WAS.png",
       tags: ["React","Vite","Tailwind CSS","Axios","Yup","Node.js","Express","MongoDB","Cloudinary","Multer"],
-      demoLink: "https://demo.com",
+      demoLink: "https://uk-master-class-project.vercel.app/",
       githubLink: "https://github.com/Conqueror102?tab=repositories",
     },
     {
@@ -508,10 +503,7 @@ function ProjectsSection() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">My Projects</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Here are some of my recent projects. Each one was carefully crafted with attention to detail, performance,
-              and user experience.
-            </p>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-700 to-blue-400 rounded-full mb-6 mx-auto"></div>
           </div>
           <div className="flex justify-center mb-8">
          
@@ -532,7 +524,7 @@ function ProjectsSection() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500">
+                  <h3 className="text-xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-400">
                     {project.title}
                   </h3>
                   <p className="text-gray-600 mb-4 text-sm">{project.description}</p>
@@ -546,14 +538,14 @@ function ProjectsSection() {
                   <div className="flex justify-between">
                     <Link
                       href={project.demoLink}
-                      className="text-violet-500 hover:text-fuchsia-500 font-medium text-sm flex items-center transition-colors"
+                      className="text-blue-500 hover:text-blue-400 font-medium text-sm flex items-center transition-colors"
                     >
                       Live Demo
                       <ExternalLink className="ml-1 h-4 w-4" />
                     </Link>
                     <Link
                       href={project.githubLink}
-                      className="text-gray-600 hover:text-violet-500 font-medium text-sm flex items-center transition-colors"
+                      className="text-gray-600 hover:text-blue-500 font-medium text-sm flex items-center transition-colors"
                     >
                       <Github className="mr-1 h-4 w-4" />
                       Code
@@ -601,24 +593,21 @@ function ProcessSection() {
 
   return (
     <section className="py-20 bg-gray-50 relative">
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-fuchsia-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">My Work Process</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              I follow a structured approach to ensure every project is delivered successfully and meets your
-              expectations.
-            </p>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-700 to-blue-400 rounded-full mb-6 mx-auto"></div>
           </div>
 
           <div className="flex flex-col md:flex-row  justify-between relative">
-            <div className="hidden md:block absolute top-[74px] left-0 right-0 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 transform -translate-y-1/2 z-0"></div>
+            <div className="hidden md:block absolute top-[74px] left-0 right-0 h-1 bg-gradient-to-r from-blue-700 to-blue-400 transform -translate-y-1/2 z-0"></div>
 
             {process.map((step, index) => (
               <div key={index} className="md:w-1/4 relative z-10  mb-10 md:mb-0">
                 <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center mb-6 text-violet-500">
+                  <div className="w-16 h-16 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center mb-6 text-blue-500">
                     {step.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-800">{step.title}</h3>
@@ -679,24 +668,22 @@ function EducationSection() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Education & Certifications</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              My academic background and professional certifications that have shaped my expertise.
-            </p>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-700 to-blue-400 rounded-full mb-6 mx-auto"></div>
           </div>
 
           <div className="grid  gap-10">
             <div>
               <h3 className="text-2xl font-bold mb-6 flex items-center text-gray-800">
-                <GraduationCap className="mr-3 text-violet-500" />
+                <GraduationCap className="mr-3 text-blue-500" />
                 Education
               </h3>
               <div className="space-y-8">
                 {education.map((item, index) => (
                   <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative">
-                    <div className="absolute h-full w-1 bg-gradient-to-b from-violet-500 to-fuchsia-500 left-0 top-0 rounded-l-2xl"></div>
+                    <div className="absolute h-full w-1 bg-gradient-to-b from-blue-500 to-blue-400 left-0 top-0 rounded-l-2xl"></div>
                     <div className="pl-4">
                       <h4 className="text-xl font-bold text-gray-800 mb-1">{item.degree}</h4>
-                      <p className="text-violet-500 font-medium mb-2">{item.institution}</p>
+                      <p className="text-blue-500 font-medium mb-2">{item.institution}</p>
                       <p className="text-gray-500 text-sm mb-3">{item.period}</p>
                       <p className="text-gray-600">{item.description}</p>
                     </div>
@@ -739,6 +726,7 @@ function ContactSection() {
     email: "",
     message: "",
   })
+  const [status, setStatus] = React.useState(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -746,45 +734,40 @@ function ContactSection() {
   }
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-
- 
-
+    setStatus(null)
     try {
       const response = await axios.post("/api/send-mail", formData)
-      console.log(response.data.message || "Message sent successfully!")
-    } catch (error: any) {
-      console.log(error.response?.data?.message || error.message)
+      setStatus({ type: "success", message: response.data.message || "Message sent successfully!" })
+      setFormData({ name: "", email: "", message: "" })
+    } catch (error) {
+      setStatus({ type: "error", message: error.response?.data?.message || error.message || "Something went wrong." })
     }
-
-    setFormData({ name: "", email: "", message: "" })
+    setTimeout(() => setStatus(null), 5000)
   }
 
   return (
-    <section id="contact" className="py-20 relative">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl"></div>
+    <section id="contact" className="py-20 relative bg-white">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 z-10 rounded-full blur-3xl"></div>
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Get In Touch</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Have a project in mind or want to collaborate? Feel free to reach out and I'll get back to you as soon as
-              possible.
-            </p>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-700 to-blue-400 rounded-full mb-6 mx-auto"></div>
           </div>
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
             <div className="grid md:grid-cols-2">
-              <div className="p-8 md:p-12 bg-gradient-to-br from-violet-500/10 to-fuchsia-500/10 backdrop-blur-sm">
+              <div className="p-8 md:p-12 bg-gradient-to-br from-blue-500/10 to-blue-400/10 backdrop-blur-sm">
                 <h3 className="text-2xl font-bold mb-6 text-gray-800">Contact Information</h3>
                 <p className="mb-8 text-gray-600">
                   I'd love to hear from you. Fill out the form or reach out directly through the following channels:
                 </p>
                 <div className="space-y-6">
                   <div className="flex items-center">
-                    <Mail className="h-6 w-6 mr-4 text-violet-500" />
+                    <Mail className="h-6 w-6 mr-4 text-blue-500" />
                     <span className="text-gray-700">victorvector608@gmail.com</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="h-6 w-6 mr-4 flex items-center justify-center text-violet-500">
+                    <div className="h-6 w-6 mr-4 flex items-center justify-center text-blue-500">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6"
@@ -803,7 +786,7 @@ function ContactSection() {
                     <span className="text-gray-700">+234 802 538 3208</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="h-6 w-6 mr-4 flex items-center justify-center text-violet-500">
+                    <div className="h-6 w-6 mr-4 flex items-center justify-center text-blue-500">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6"
@@ -831,25 +814,30 @@ function ContactSection() {
                 <div className="mt-12 flex space-x-4">
                   <Link
                     href="https://x.com/TECH_snitch101?t=1MXTBHsRp_tx9nFgz7iNAA&s=09"
-                    className="bg-white p-3 rounded-full hover:bg-gray-100 transition-colors text-violet-500 shadow-sm"
+                    className="bg-white p-3 rounded-full hover:bg-gray-100 transition-colors text-blue-500 shadow-sm"
                   >
                     <Twitter className="h-5 w-5" />
                   </Link>
                   <Link
                     href="https://www.linkedin.com/in/victor-conqueror-956635327/"
-                    className="bg-white p-3 rounded-full hover:bg-gray-100 transition-colors text-violet-500 shadow-sm"
+                    className="bg-white p-3 rounded-full hover:bg-gray-100 transition-colors text-blue-500 shadow-sm"
                   >
                     <Linkedin className="h-5 w-5" />
                   </Link>
                   <Link
                     href="https://github.com/Conqueror102"
-                    className="bg-white p-3 rounded-full hover:bg-gray-100 transition-colors text-violet-500 shadow-sm"
+                    className="bg-white p-3 rounded-full hover:bg-gray-100 transition-colors text-blue-500 shadow-sm"
                   >
                     <Github className="h-5 w-5" />
                   </Link>
                 </div>
               </div>
               <div className="p-8 md:p-12">
+                {status && (
+                  <div className={`mb-4 px-4 py-3 rounded-xl text-center font-medium ${status.type === "success" ? "bg-green-100 text-green-700 border border-green-200" : "bg-red-100 text-red-700 border border-red-200"}`}>
+                    {status.message}
+                  </div>
+                )}
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -860,7 +848,7 @@ function ContactSection() {
                     onChange={handleChange}
                       type="text"
                       id="name"
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                       placeholder="Your name"
                     />
                   </div>
@@ -873,7 +861,7 @@ function ContactSection() {
                     onChange={handleChange}
                       type="email"
                       id="email"
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -897,13 +885,13 @@ function ContactSection() {
                       rows={4}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                       placeholder="Your message"
                     ></textarea>
                   </div>
                   <button
                     type="submit"
-                    className="w-full py-3 px-6 text-white bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 font-medium"
+                    className="w-full py-3 px-6 text-white bg-gradient-to-r from-blue-500 to-blue-400 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 font-medium"
                   >
                     Send Message
                   </button>
@@ -920,11 +908,11 @@ function ContactSection() {
 
 function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-100 pt-16 pb-8  md:px-16">
+    <footer className="bg-gray-50 border-t border-gray-100 pt-16 pb-8  md:px-16">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
           <div className="md:col-span-2">
-            <div className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500">
+            <div className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-400">
               Victor Onyemaechi
             </div>
             <p className="text-gray-600 mb-6 max-w-md">
@@ -933,19 +921,19 @@ function Footer() {
             <div className="flex space-x-4">
               <Link
                 href="https://x.com/TECH_snitch101?t=1MXTBHsRp_tx9nFgz7iNAA&s=09"
-                className="bg-gray-100 p-2 rounded-full hover:bg-gray-200 transition-colors text-violet-500"
+                className="bg-white shadow-sm p-2 rounded-full hover:bg-gray-200 transition-colors text-blue-500"
               >
                 <Twitter className="h-5 w-5" />
               </Link>
               <Link
                 href="https://www.linkedin.com/in/victor-conqueror-956635327/"
-                className="bg-gray-100 p-2 rounded-full hover:bg-gray-200 transition-colors text-violet-500"
+                className="bg-white shadow-sm p-2 rounded-full hover:bg-gray-200 transition-colors text-blue-500"
               >
                 <Linkedin className="h-5 w-5" />
               </Link>
               <Link
                 href="https://github.com/Conqueror102"
-                className="bg-gray-100 p-2 rounded-full hover:bg-gray-200 transition-colors text-violet-500"
+                className="bg-white shadow-sm p-2 rounded-full hover:bg-gray-200 transition-colors text-blue-500"
               >
                 <Github className="h-5 w-5" />
               </Link>
@@ -953,13 +941,13 @@ function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4 text-gray-800">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-4 text-blue-500">Quick Links</h3>
             <ul className="space-y-2">
               {["Home", "About", "Services", "Projects", "Contact"].map((item) => (
                 <li key={item}>
                   <Link
                     href={`#${item.toLowerCase()}`}
-                    className="text-gray-600 hover:text-violet-500 transition-colors"
+                    className="text-gray-600 hover:text-blue-500 transition-colors"
                   >
                     {item}
                   </Link>
@@ -969,14 +957,14 @@ function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4 text-gray-800">Contact</h3>
+            <h3 className="text-lg font-bold mb-4 text-blue-500">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <Mail className="h-5 w-5 mr-3 text-violet-500 mt-1" />
+                <Mail className="h-5 w-5 mr-3 text-blue-500 mt-1" />
                 <span className="text-gray-600">victorvector608@gmail.com</span>
               </li>
               <li className="flex items-start">
-                <div className="h-5 w-5 mr-3 flex items-center justify-center text-violet-500 mt-1">
+                <div className="h-5 w-5 mr-3 flex items-center justify-center text-blue-500 mt-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5"
@@ -995,7 +983,7 @@ function Footer() {
                 <span className="text-gray-600">+234 802 538 3208</span>
               </li>
               <li className="flex items-start">
-                <div className="h-5 w-5 mr-3 flex items-center justify-center text-violet-500 mt-1">
+                <div className="h-5 w-5 mr-3 flex items-center justify-center text-blue-500 mt-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5"

@@ -11,7 +11,7 @@ export async function GET() {
     <div
       style={{
         fontSize: 128,
-        background: "#1e1e1e",
+        background: "linear-gradient(135deg, #007acc 0%, #60aaff 100%)",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -22,19 +22,13 @@ export async function GET() {
         padding: "40px",
       }}
     >
-      <div style={{ fontSize: 64, color: "#569CD6", marginBottom: 20 }}>Victor Onyemaechi</div>
+      <img
+        src={"/victor logo.jpg"}
+        alt="Victor Onyemaechi Logo"
+        style={{ width: 180, height: 180, borderRadius: "50%", marginBottom: 32, objectFit: "cover", border: "6px solid #fff", boxShadow: "0 4px 32px #007acc55" }}
+      />
+      <div style={{ fontSize: 64, color: "#007acc", marginBottom: 20, fontWeight: 700 }}>Victor Onyemaechi</div>
       <div style={{ fontSize: 48, color: "#D4D4D4" }}>Full Stack Developer</div>
-      <div
-        style={{
-          display: "flex",
-          marginTop: 40,
-          gap: 20,
-        }}
-      >
-        <div style={{ background: "#61DAFB", padding: "8px 16px", borderRadius: 8 }}>React</div>
-        <div style={{ background: "#3178C6", padding: "8px 16px", borderRadius: 8 }}>TypeScript</div>
-        <div style={{ background: "#339933", padding: "8px 16px", borderRadius: 8 }}>Node.js</div>
-      </div>
     </div>,
     {
       width: 1200,

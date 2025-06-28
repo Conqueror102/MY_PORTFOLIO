@@ -34,7 +34,7 @@ export function Projects() {
       technologies: ["React","Vite","Tailwind CSS","Axios","Yup","Node.js",
 "Express","MongoDB","Cloudinary","Multer",],
       github: "https://github.com/Conqueror102?tab=repositories",
-      demo: "https://demo.com",
+      demo: "https://uk-master-class-project.vercel.app/",
       image: "/WAS.png",
       live:true
     },
@@ -52,7 +52,7 @@ export function Projects() {
       description: "Gentle Men is A simple static fashion eCommerce website built using HTML and CSS during my beginner days, showcasing product listings, pricing, and a contact page. ⚠️ Note: HTML & CSS fashion eCommerce website project I built during my beginner days. The site may trigger a browser security warning due to lack of HTTPS, but it’s completely harmless and contains no malicious content. It was created solely for practice and learning purposes.",
       technologies: ["HTML", "CSS"],
       github: "https://github.com/Conqueror102/gentlemen-ecommerce",
-      demo: "http://gentlemen-ecommerce.vercel.app/",
+      demo: "https://gentle-men101.vercel.app/",
       image: "/gentle.png",
     },
   ]
