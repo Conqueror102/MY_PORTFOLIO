@@ -18,7 +18,7 @@ const portfolioInfo = {
   description:
     "Experienced Full Stack Developer specializing in React, Next.js, TypeScript, and Node.js. View my projects and skills.",
   url: "https://victor-onyemaechi.vercel.app", // Replace with your actual domain
-  image: "https://victor-onyemaechi.vercel.app/og-image.jpg", // Replace with your actual OG image
+  image: "https://victor-onyemaechi.vercel.app/og-image", // Updated to use dynamic OG image route
   twitterHandle: "@TECH_snitch101", // Replace with your Twitter handle
   keywords: [
     "full stack developer",
@@ -29,6 +29,11 @@ const portfolioInfo = {
     "software engineer",
     "frontend developer",
     "backend developer",
+    "fullstack developer in lagos",
+    "fullstack developer in nigeria",
+    "backend developer needed",
+    "frontend developer needed",
+    "a skilled software enginneer need",
   ],
 }
 
