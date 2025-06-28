@@ -282,10 +282,14 @@ function AboutSection() {
                 at the cutting edge of web development.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="inline-flex items-center px-6 py-3 text-gray-700 bg-white border border-gray-200 rounded-full shadow-md hover:shadow-lg hover:bg-gray-50 transform hover:-translate-y-1 transition-all duration-300 font-medium">
+                <a 
+                  href="/victors CV.docx" 
+                  download 
+                  className="inline-flex items-center px-6 py-3 text-gray-700 bg-white border border-gray-200 rounded-full shadow-md hover:shadow-lg hover:bg-gray-50 transform hover:-translate-y-1 transition-all duration-300 font-medium"
+                >
                   <Download className="mr-2 h-5 w-5" />
                   Download CV
-                </button>
+                </a>
                 <Link
                   href="#contact"
                   className="inline-flex items-center px-6 py-3 text-white bg-gradient-to-r from-blue-700 to-blue-400 rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 font-medium"
@@ -848,6 +852,7 @@ function ContactSection() {
                     onChange={handleChange}
                       type="text"
                       id="name"
+                      name="name"
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                       placeholder="Your name"
                     />
@@ -861,6 +866,7 @@ function ContactSection() {
                     onChange={handleChange}
                       type="email"
                       id="email"
+                      name="email"
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                       placeholder="your.email@example.com"
                     />
@@ -883,6 +889,7 @@ function ContactSection() {
                     <textarea
                       id="message"
                       rows={4}
+                      name="message"
                       value={formData.message}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"

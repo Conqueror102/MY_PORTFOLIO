@@ -263,14 +263,17 @@ export function VSCodeLayout({ children, activeSection, setActiveSection }: VSCo
           <select
             value={currentTheme}
             onChange={(e) => setCurrentTheme(e.target.value)}
-            className="bg-transparent border border-gray-600 rounded text-xs px-1 py-0.5 focus:outline-none"
-            style={{ color: theme.foreground }}
+            className="bg-[#252526] border border-[#3C3C3C] text-[#CCCCCC] text-xs px-1 py-0.5 focus:outline-none max-w-[80px] sm:max-w-none"
+            style={{ borderRadius: 2 }}
           >
             {Object.keys(themes).map((themeName) => (
               <option
                 key={themeName}
                 value={themeName}
-                style={{ backgroundColor: themes[themeName as keyof typeof themes].background }}
+                style={{ 
+                  backgroundColor: '#252526',
+                  color: '#CCCCCC'
+                }}
               >
                 {themeName}
               </option>
@@ -279,29 +282,29 @@ export function VSCodeLayout({ children, activeSection, setActiveSection }: VSCo
           {/* Dropdown for switching views (VS Code style) */}
           <div className="relative">
             <button
-              className="ml-2 px-2 py-1 bg-[#252526] border border-[#3C3C3C] text-xs text-[#CCCCCC] font-mono flex items-center gap-1 focus:outline-none"
-              style={{ borderRadius: 2, minWidth: 110 }}
+              className="ml-1 sm:ml-2 px-1 sm:px-2 py-0.5 sm:py-1 bg-[#252526] border border-[#3C3C3C] text-xs text-[#CCCCCC] font-mono flex items-center gap-1 focus:outline-none"
+              style={{ borderRadius: 2, minWidth: '80px', maxWidth: '100px' }}
               onClick={() => setOpenDropdown((prev) => !prev)}
             >
-              {userType === 'developer' ? 'Developer View' : 'Client View'}
+              {userType === 'developer' ? 'Dev View' : 'Client View'}
               <svg className="w-3 h-3 text-[#CCCCCC]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             {openDropdown && (
               <div
-                className="absolute right-0 mt-1 w-36 border border-[#3C3C3C] bg-[#252526] text-xs font-mono z-50"
+                className="absolute right-0 mt-1 w-28 sm:w-36 border border-[#3C3C3C] bg-[#252526] text-xs font-mono z-50"
                 style={{ borderRadius: 2 }}
               >
                 <button
-                  className={`block w-full text-left px-4 py-2 transition-colors ${userType === 'client' ? 'bg-[#007ACC] text-white' : 'text-[#CCCCCC] hover:bg-[#2C2C32] hover:text-white'}`}
+                  className={`block w-full text-left px-2 sm:px-4 py-1 sm:py-2 transition-colors ${userType === 'client' ? 'bg-[#007ACC] text-white' : 'text-[#CCCCCC] hover:bg-[#2C2C32] hover:text-white'}`}
                   style={{ borderTopLeftRadius: 2, borderTopRightRadius: 2 }}
                   onClick={() => { handleSwitch('client'); setOpenDropdown(false); }}
                 >
                   Client View
                 </button>
                 <button
-                  className={`block w-full text-left px-4 py-2 transition-colors ${userType === 'developer' ? 'bg-[#007ACC] text-white' : 'text-[#CCCCCC] hover:bg-[#2C2C32] hover:text-white'}`}
+                  className={`block w-full text-left px-2 sm:px-4 py-1 sm:py-2 transition-colors ${userType === 'developer' ? 'bg-[#007ACC] text-white' : 'text-[#CCCCCC] hover:bg-[#2C2C32] hover:text-white'}`}
                   style={{ borderBottomLeftRadius: 2, borderBottomRightRadius: 2 }}
                   onClick={() => { handleSwitch('developer'); setOpenDropdown(false); }}
                 >
