@@ -169,7 +169,7 @@ export function Hero() {
               </code>
             </pre>
             <div className="flex justify-center mt-2">
-              <a href="/victors CV.docx" download="Victors Cv.docx">
+              <a href="/victors CV.pdf" download="Victors Cv.pdf">
         <button className="bg-[#007ACC] hover:bg-[#0062A3] text-white px-6 py-2 rounded-md transition-colors duration-200">
           Download CV
           <Download className="inline-block ml-2" />

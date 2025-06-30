@@ -126,7 +126,7 @@ function Navbar() {
             </div>
             
             {/* Hamburger for mobile */}
-            <button className="md:hidden text-blue-500 bg-blue-500/10 rounded-full p-2" onClick={() => setMobileMenu((prev) => !prev)}>
+            <button className="md:hidden  text-blue-500 bg-blue-500/10 rounded-full p-2" onClick={() => setMobileMenu((prev) => !prev)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -283,7 +283,7 @@ function AboutSection() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a 
-                  href="/victors CV.docx" 
+                  href="/victors CV.pdf" 
                   download 
                   className="inline-flex items-center px-6 py-3 text-gray-700 bg-white border border-gray-200 rounded-full shadow-md hover:shadow-lg hover:bg-gray-50 transform hover:-translate-y-1 transition-all duration-300 font-medium"
                 >
